@@ -56,10 +56,10 @@ Drop a new JSON file into `src/resources/i18n`, e.g. `de.json`:
 
 Then select it from the language drop-down. No restart required.
 
-## Quick scripts (Windows)
+## Quick scripts
 
-- `install.bat` installs dependencies and launches the app.
-- `build.bat` builds a PyInstaller package and reports if Python is missing.
+- Windows: `install.bat`, `build.bat`
+- macOS/Linux: `bash install.sh`
 
 ## Packaging
 
