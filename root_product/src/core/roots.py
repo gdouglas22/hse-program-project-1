@@ -11,14 +11,12 @@ RootValue = Union[Decimal, complex, float]
 
 
 def principal_root(parsed: ParsedNumber, degree: int) -> RootValue:
-    """Return the principal n-th root for a parsed number."""
     if parsed.is_complex:
         return _principal_root_complex(parsed.value, degree)
     return _principal_root_real(parsed.value, degree)
 
 
 def all_roots(parsed: ParsedNumber, degree: int) -> List[complex]:
-    """Return all n-th roots for a parsed number (complex results)."""
     if parsed.is_complex:
         z = parsed.value
     else:
@@ -27,7 +25,6 @@ def all_roots(parsed: ParsedNumber, degree: int) -> List[complex]:
 
 
 def format_root(value: RootValue, precision: int) -> str:
-    """Format a root value for display (rectangular form)."""
     if isinstance(value, Decimal):
         return _format_decimal(value, precision)
     if isinstance(value, complex):
@@ -36,7 +33,6 @@ def format_root(value: RootValue, precision: int) -> str:
 
 
 def format_polar(value: complex, precision: int) -> str:
-    """Format a complex number in polar form."""
     r, theta = cmath.polar(value)
     r_s = _format_float(r, precision)
     t_s = _format_float(theta, precision)

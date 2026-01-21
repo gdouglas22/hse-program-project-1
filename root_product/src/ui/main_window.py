@@ -12,8 +12,6 @@ from i18n.manager import I18nManager
 
 
 class MainWindow:
-    """Main Tkinter window."""
-
     def __init__(self, root: tk.Tk, i18n: I18nManager) -> None:
         self.root = root
         self.i18n = i18n

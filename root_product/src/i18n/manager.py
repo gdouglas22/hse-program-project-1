@@ -7,7 +7,6 @@ from typing import Dict, List, Tuple
 from core.resources import get_resource_path
 
 class I18nManager:
-    """Load and serve translations with runtime switching."""
 
     def __init__(self, base_dir: Path | None = None) -> None:
         if base_dir is None:

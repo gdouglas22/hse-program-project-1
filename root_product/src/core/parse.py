@@ -10,8 +10,6 @@ from .errors import InputError
 
 @dataclass(frozen=True)
 class ParsedNumber:
-    """Parsed number with type info."""
-
     value: Union[Decimal, complex]
     is_complex: bool
 
@@ -27,7 +25,6 @@ def _normalize_complex(text: str) -> str:
 
 
 def parse_number(text: str) -> ParsedNumber:
-    """Parse a real or complex number from user input."""
     raw = text.strip()
     if not raw:
         raise InputError("empty")
@@ -46,7 +43,6 @@ def parse_number(text: str) -> ParsedNumber:
 
 
 def parse_degree(text: str) -> int:
-    """Parse n-th root degree."""
     raw = text.strip()
     if not raw:
         raise InputError("degree_empty")
@@ -60,7 +56,6 @@ def parse_degree(text: str) -> int:
 
 
 def parse_precision(text: str, min_value: int = 0, max_value: int = 50) -> int:
-    """Parse precision setting (digits after decimal)."""
     raw = text.strip()
     if not raw:
         raise InputError("precision_empty")
